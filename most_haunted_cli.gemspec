@@ -1,3 +1,4 @@
+require './lib/most_haunted/version'
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
@@ -9,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["jamiegiuliano"]
   spec.email         = ["jamiepgiuliano@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = "Most Haunted Places in America"
+  spec.description   = "Top 10 Haunted Locations in America and Top Haunted Locations in Every State."
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -31,4 +32,8 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency "rspec", ">= 0"
+  s.add_development_dependency "pry", ">= 0"
+  
+  s.add_dependency "nokogiri", ">= 0"
 end

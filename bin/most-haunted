@@ -2,4 +2,4 @@
 
 require_relative '../lib/most_haunted'
 
-MostHaunted::CLI.new.call
+MostHauntedCli::CLI.new.call

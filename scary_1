@@ -1,0 +1,26 @@
+
+[1mFrom:[0m /home/ubuntu/workspace/most_haunted_cli/lib/most_haunted/america.rb @ line 22 MostHauntedCli::America.all:
+
+     [1;34m4[0m: [32mdef[0m [1;36mself[0m.[1;34mall[0m
+     [1;34m5[0m:     [1;34m# Should return the 10 Most Haunted Places in America[0m
+     [1;34m6[0m:     scary_1 = [1;36mself[0m.new
+     [1;34m7[0m:     scary_1.name = [31m[1;31m"[0m[31mEastern State Penitentiary[1;31m"[0m[31m[0m
+     [1;34m8[0m:     scary_1.location = [31m[1;31m"[0m[31mPhiladelphia, PA[1;31m"[0m[31m[0m
+     [1;34m9[0m:     scary_1.description =   [31m[1;31m"[0m[31mEastern State Penitentiary brings a close to our list of the scariest [0m
+    [1;34m10[0m:                             places [32min[0m [1;34;4mAmerica[0m. Built [32min[0m [1;34m1829[0m, this former prison was a place you 
+    [1;34m11[0m:                             really didn’t want to be locked up [32min[0m [32mif[0m you were a criminal. Originally
+    [1;34m12[0m:                             built to house up to [1;34m25[0mo inmates, the numbers eventually swelled to over 
+    [1;34m13[0m:                             [1;34m1[0m,[1;34m700[0m. Prisoners were brutally mistreated, often sprayed with freezing 
+    [1;34m14[0m:                             cold water [32mand[0m sent outside [32min[0m the middle of winter.[31m[1;31m"[0m[31m[0m
+    [1;34m15[0m: 
+    [1;34m16[0m:     scary_2 =[1;36mself[0m.new
+    [1;34m17[0m:     scary_2.name = [31m[1;31m"[0m[31mVILLISCA AX MURDER HOUSE[1;31m"[0m[31m[0m
+    [1;34m18[0m:     scary_2.location = [31m[1;31m"[0m[31mIowa[1;31m"[0m[31m[0m
+    [1;34m19[0m:     scary_2.description = [31m[1;31m"[0m[31mNo. 2 on our list of the most haunted places in [0m
+    [1;34m20[0m:     the [1;34;4mUS[0m is [1;34;4mVillisca[0m [1;34;4mAxe[0m [1;34;4mMurder[0m [1;34;4mHouse[0m. Widely regarded by many paranormal 
+    [1;34m21[0m:     experts as the most haunted house [32min[0m [1;34;4mAmerica[0m.[31m[1;31m"[0m[31m[0m
+ => [1;34m22[0m:     binding.pry
+    [1;34m23[0m:     
+    [1;34m24[0m:     [scary_1, scary_2]
+    [1;34m25[0m: [32mend[0m
+

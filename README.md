@@ -1,3 +1,9 @@
+## License 
+
+Copyright (c) 2018 jamiegiuliano and contributers
+
+MIT License, see [LICENSE](LICENSE.md) for details.
+
 # MostHauntedCli
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/most_haunted_cli`. To experiment with that code, run `bin/console` for an interactive prompt.

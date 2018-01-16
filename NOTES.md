@@ -4,7 +4,8 @@ A cli to find the most haunted places in America
     Choice: America || State
     
     If America  
-        Top 10 in America
+        Top 10 in America (listed from 1-10)
+            Can type in 1-10 to get description of haunted place
         
     If State
         List 50 states (numbered 1-50)
