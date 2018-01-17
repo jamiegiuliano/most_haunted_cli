@@ -1,15 +1,14 @@
 class MostHauntedCli::CLI
    
     def call
-        open_me
         #puts "Search for Scary Places Near You!" 
         #start
         #goodbye
     end
     
     def open_me
-        binding.pry
         doc = Nokogiri::HTML(open("https://www.hauntedrooms.com/haunted-places")) 
+        binding.pry
         doc
     end
     
