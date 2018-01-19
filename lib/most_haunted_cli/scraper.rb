@@ -1,13 +1,23 @@
 class MostHauntedCli::Scraper
+    
+    @america = []
+    
+    def self.america
+       @america 
+    end
    
     def self.scrape_america
-        america = []
         doc = Nokogiri::HTML(open("https://hauntedrooms.com/haunted-places"))
-        binding.pry
-        america
+        new = doc.search("h3.section-title.clearfix span").children
+        new.each do |list| 
+            self.america << list.text
+        end
+        self.america
     end
     
-    def self.scrape_states
-        
+    def self.scrape_america_descriptions
+       doc = Nokogiri::HTML(open("https://hauntedrooms.com/haunted-places"))
+        paragraphs = doc.search("div.entry-content p")
+        paragraphs
     end
 end

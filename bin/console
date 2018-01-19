@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'pry' # !! Remove this before launching !! 
-
 require "bundler/setup"
 require_relative "../lib/most_haunted_cli/america"
 require_relative "../lib/most_haunted_cli/cli"
