@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 
-require 'nokogiri'
-require 'pry' # !! take this out before publishing gem !!
+require 'pry' # !! Remove this before launching !! 
 
 require "bundler/setup"
 require_relative "../lib/most_haunted_cli/america"
 require_relative "../lib/most_haunted_cli/cli"
 require_relative "../lib/most_haunted_cli/scraper"
 require_relative "../lib/most_haunted_cli/version"
+require_relative '../lib/most_haunted'
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
