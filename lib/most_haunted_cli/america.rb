@@ -15,7 +15,7 @@ class MostHauntedCli::America
                                 cold water and sent outside in the middle of winter."
                                 
         
-        scary_2 =self.new
+        scary_2 = self.new
         scary_2.name = "VILLISCA AX MURDER HOUSE"
         scary_2.location = "Iowa"
         scary_2.description = "No. 2 on our list of the most haunted places in 

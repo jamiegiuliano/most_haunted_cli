@@ -2,7 +2,7 @@ class MostHauntedCli::Scraper
    
     def self.scrape_america
         america = []
-        doc = Nokogiri::HTML(open("https://www.hauntedrooms.com/haunted-places"))
+        doc = Nokogiri::HTML(open("https://hauntedrooms.com/haunted-places"))
         binding.pry
         america
     end
