@@ -1,8 +1,18 @@
 class MostHauntedCli::America
+    attr_accessor :location
     
-    def self.all
+    @america = []
+    
+    def self.all_america
+       @america 
+    end
+  
+    def self.all_haunted
         top_ten = MostHauntedCli::Scraper.scrape_america
-        all = top_ten.each{|h| h }
+        all = top_ten.each{|h|
+            new = self.new
+            new.location = h
+            @america << new}
         puts all
         all.clear
     end
@@ -13,6 +23,10 @@ class MostHauntedCli::America
             puts p.children[i].text
             puts ""
         end
+    end
+    
+    def connect_descriptions
+        
     end
 
 end

@@ -15,13 +15,16 @@ class MostHauntedCli::CLI
             ]
    
     def call
+        puts "--" * 17
         puts "Search for Scary Places Near You!" 
+        puts "--" * 17
         start
         goodbye
     end
     
     def start
-        puts <<-DOC
+        puts ''
+        puts <<-DOC.gsub /^\s*/, ''
         
             1. Most Haunted Places in America
             2. Choose a State
@@ -30,14 +33,16 @@ class MostHauntedCli::CLI
         input = nil
         puts ''
         while input != "exit"
+            puts "--" * 17
             puts "Please enter '1', '2', or 'exit'"
             puts "" 
             input = gets.strip.downcase
             
             case input
             when "1"
-                puts ""
+                puts "--" * 17
                 puts "10 Most Haunted Places in America"
+                puts "--" * 17
                 puts ""
                 sleep(2)
                 list_america
@@ -54,13 +59,14 @@ class MostHauntedCli::CLI
     
     def list_america 
         puts ''
-        MostHauntedCli::America.all
+        MostHauntedCli::America.all_haunted
     end
     
     def america_descriptions
         input = nil
         while input != "exit"
-            puts  <<-DOC 
+            puts "--" * 30
+            puts  <<-DOC.gsub /^\s*/, ''
             
             * Choose an index (1-10)
             * 'list' for the 10 Most Haunted Places in America
