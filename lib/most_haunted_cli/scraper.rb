@@ -20,8 +20,4 @@ class MostHauntedCli::Scraper
         paragraphs = doc.search("div.entry-content p")
         paragraphs
     end
-    
-    def scrape_states
-        
-    end
 end
