@@ -1,18 +1,4 @@
 class MostHauntedCli::CLI
-    
-    #america_descriptions_indexes
-        @@indexes = [
-           (46..48).to_a,
-           (41..44).to_a,
-           (36..39).to_a,
-           (32..34).to_a,
-           (28..30).to_a,
-           (25..26).to_a,
-           (21..23).to_a,
-           (17..19).to_a,
-           (13..15).to_a,
-           (8..11).to_a,
-            ]
    
     def call
         puts "--" * 17
@@ -59,7 +45,7 @@ class MostHauntedCli::CLI
     
     def list_america 
         puts ''
-        MostHauntedCli::America.all_haunted
+        MostHauntedCli::America.list_haunted
     end
     
     def america_descriptions
@@ -77,9 +63,9 @@ class MostHauntedCli::CLI
             descriptions = MostHauntedCli::America
                 
             if input.to_i > 0 
-                descriptions.america_descriptions(@@indexes[input.to_i-1])
+                descriptions.america_descriptions(MostHauntedCli::America.america_indexes[input.to_i-1])
             elsif input == "list"
-                list_america
+                MostHauntedCli::America.list
             elsif input == "main menu"
                 start
             else 
