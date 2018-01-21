@@ -2,9 +2,7 @@ class MostHauntedCli::America
     attr_accessor :location, :description
     
     @haunted = []
-    @k = 0 
     
-     #america_descriptions_indexes
         @@indexes = [
            (46..48).to_a,
            (41..44).to_a,
