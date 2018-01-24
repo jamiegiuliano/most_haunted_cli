@@ -1,10 +1,10 @@
-# MostHauntedCli
+# MostHauntedCliGem
 
-CLI Gem for viewing the most haunted locations in America and Canada. This Ruby 
-Gem provides a CLI for locating the most haunted locations in America and 
-Canada as well as their in-depth descriptions. This gem allows the user to find these
+CLI Gem for viewing the most haunted locations in America.This Ruby 
+Gem provides a CLI for locating the most haunted locations in America 
+as well as their in-depth descriptions. This gem allows the user to find these
 locations by their State or from a list of the top 10 Most Haunted Locations in 
-America and Canada. Once a location is selected a description is displayed.
+America. Once a location is selected a description is displayed.
 
 ## Installation
 

@@ -51,6 +51,7 @@ class MostHauntedCli::CLI
     
     def list_states
       MostHauntedCli::States.states_list 
+      MostHauntedCli::States.state_columns
       puts ''
     end
     
@@ -60,6 +61,7 @@ class MostHauntedCli::CLI
             puts <<-DOC.gsub /^\s*/, ''
             
             * choose an index (1-52) to discover a state's most haunted location!
+            * 'list' for a list of states
             * 'main menu'
             * 'exit'
             
@@ -68,10 +70,12 @@ class MostHauntedCli::CLI
             
             if input.to_i > 0
                 puts ''
-                puts "MORE GHOSTS COMING SOON"
+                puts "MORE HAUNTINGS COMING SOON"
                 puts ''
             elsif input == 'main menu'
                 start
+            elsif input == 'list'
+                MostHauntedCli::States.state_columns
             else
                 goodbye
                 exit

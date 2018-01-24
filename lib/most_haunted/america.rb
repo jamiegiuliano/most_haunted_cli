@@ -2,6 +2,7 @@ class MostHauntedCli::America
     attr_accessor :location, :description
     
     @haunted = []
+    @list = []
     
         @@indexes = [
            (46..48).to_a,
@@ -38,7 +39,6 @@ class MostHauntedCli::America
     end
     
     def self.list_haunted
-       @list = []
        create_haunted.collect{|h| @list << h.location}
        puts @list
     end
