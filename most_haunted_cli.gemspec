@@ -12,24 +12,13 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Most Haunted Places in America"
   spec.description   = "Top 10 Haunted Locations in America and Top Haunted Locations in Every State."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
-
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
-
+  spec.homepage      = "https://github.com/jamiegiuliano/most_haunted_cli"
+  spec.license       = "MIT"
+  
+  spec.executables   = ["most_haunted_cli"]
+  spec.files         = ["lib/most_haunted_cli", "lib/most_haunted_cli/america.rb", "lib/most_haunted_cli/cli.rb", "lib/most_haunted_cli/scraper.rb", "lib/most_haunted_cli/states.rb", "lib/most_haunted_cli/version.rb", "lib/most_haunted.rb"]
+ 
+ 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", ">= 0"
