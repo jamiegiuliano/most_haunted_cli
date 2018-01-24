@@ -20,9 +20,13 @@ class MostHauntedCli::America
     def self.america_indexes
        @@indexes 
     end
-
+    
     def self.list
-        @list.each{|l| puts l}
+       @list 
+    end
+    
+    def self.haunted
+       @haunted 
     end
   
     def self.create_haunted
@@ -33,18 +37,18 @@ class MostHauntedCli::America
             d = h.split(".")[0]
             n = "#{d}".to_i
             new.description = @@indexes[n-1]
-            @haunted << new
+            self.haunted << new
         end
-        @haunted
+        self.haunted
     end
     
     def self.list_haunted
-       create_haunted.collect{|h| @list << h.location}
-       puts @list
+       create_haunted.collect{|h| self.list << h.location}
+       puts self.list
     end
     
-    def self.list
-        @list.each{|l| puts l}
+    def self.list_each
+        self.list.each{|l| puts l}
     end
     
     def self.america_descriptions(input)
