@@ -50,14 +50,15 @@ class MostHauntedCli::CLI
     end
     
     def list_states
-      MostHauntedCli::States.states_list 
-      MostHauntedCli::States.state_columns
-      puts ''
+        MostHauntedCli::States.states_list 
+        MostHauntedCli::States.state_columns
+        puts ''
     end
     
     def state_options
         input = nil
         while input != "exit"
+        puts "--" * 30
             puts <<-DOC.gsub /^\s*/, ''
             
             * choose an index (1-52) to discover a state's most haunted location!

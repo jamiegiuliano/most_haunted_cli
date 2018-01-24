@@ -23,8 +23,10 @@ class MostHauntedCli::States
     end
      
     def self.states_list
-        create_state.collect.with_index(1) do |s, i| 
-           self.states << "#{i}. #{s.name}"
+        if self.states.empty? == true
+            create_state.collect.with_index(1) do |s, i| 
+               self.states << "#{i}. #{s.name}"
+            end
         end
     end
     
