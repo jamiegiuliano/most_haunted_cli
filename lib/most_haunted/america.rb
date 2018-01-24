@@ -47,8 +47,12 @@ class MostHauntedCli::America
     end
     
     def self.list_haunted
-       create_haunted.collect{|h| self.list << h.location}
-       puts self.list
+        if self.list.empty? == true
+            create_haunted.collect{|h| self.list << h.location}
+            puts self.list
+        else
+            puts self.list
+        end
     end
     
     def self.america_descriptions(input)
