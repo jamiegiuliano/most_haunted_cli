@@ -5,9 +5,11 @@ see [LICENSE](LICENSE.md) for details.
 
 # MostHauntedCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/most_haunted_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+CLI Gem for viewing the most haunted locations in America and Canada. This Ruby
+Gem provides a CLI for locating the most haunted locations in America and 
+Canada as well as their in-depth descriptions. This gem allows the user to find these
+locations by their State or from a list of the top 10 Most Haunted Locations in 
+America and Canada. Once a location is selected a description is displayed.
 
 ## Installation
 
