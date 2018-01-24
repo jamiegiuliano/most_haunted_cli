@@ -28,10 +28,10 @@ Run Gem with command:
 
     $ most_haunted_cli
     
-    TODO:
+TODO:
     
-    * Publish to RubyGems.org
-    * Add most haunted locations to each state and their descriptions.
+* Publish to RubyGems.org
+* Add most haunted locations to each state and their descriptions.
 
 ## Development
 
