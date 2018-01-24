@@ -28,6 +28,10 @@ class MostHauntedCli::America
     def self.haunted
        @haunted 
     end
+    
+    def self.list_each
+        self.list.each{|l| puts l}
+    end
   
     def self.create_haunted
         top_ten = MostHauntedCli::Scraper.scrape_america
@@ -45,10 +49,6 @@ class MostHauntedCli::America
     def self.list_haunted
        create_haunted.collect{|h| self.list << h.location}
        puts self.list
-    end
-    
-    def self.list_each
-        self.list.each{|l| puts l}
     end
     
     def self.america_descriptions(input)
