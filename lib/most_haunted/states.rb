@@ -17,10 +17,14 @@ class MostHauntedCli::States
     def self.haunted
         @haunted
     end
+    
+    def self.states
+        @states
+    end
      
     def self.states_list
         create_state.collect.with_index(1) do |s, i| 
-           @states << "#{i}. #{s.name}"
+           self.states << "#{i}. #{s.name}"
         end
     end
     
@@ -34,7 +38,7 @@ class MostHauntedCli::States
     end
     
     def self.state_columns
-        @states.each.each_slice(2) do |slice|
+        self.states.each.each_slice(2) do |slice|
             create_columns(slice)
         end
     end
