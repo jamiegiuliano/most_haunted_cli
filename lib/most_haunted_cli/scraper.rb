@@ -1,6 +1,7 @@
 class MostHauntedCli::Scraper
     
     @america = []
+    @states = []
     
     def self.america
        @america 
@@ -19,5 +20,14 @@ class MostHauntedCli::Scraper
         doc = Nokogiri::HTML(open("https://hauntedrooms.com/haunted-places"))
         paragraphs = doc.search("div.entry-content p")
         paragraphs
+    end
+    
+    def self.states
+       doc = Nokogiri::HTML(open("https://hauntedrooms.com/haunted-places"))
+       states = doc.search("tbody li").children
+        states.each do |s|
+           @states << s.text
+        end
+        @states
     end
 end

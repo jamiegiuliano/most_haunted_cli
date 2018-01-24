@@ -35,7 +35,8 @@ class MostHauntedCli::CLI
                 america_descriptions
             when "2"
                 puts ""
-                puts "List of States:"
+                list_states
+                state_options
             else
                 goodbye
                 exit
@@ -48,15 +49,45 @@ class MostHauntedCli::CLI
         MostHauntedCli::America.list_haunted
     end
     
+    def list_states
+      MostHauntedCli::States.states_list 
+      puts ''
+    end
+    
+    def state_options
+        input = nil
+        while input != "exit"
+            puts <<-DOC.gsub /^\s*/, ''
+            
+            * choose an index (1-52) to discover a state's most haunted location!
+            * 'main menu'
+            * 'exit'
+            
+            DOC
+            input= gets.strip.downcase
+            
+            if input.to_i > 0
+                puts ''
+                puts "MORE GHOSTS COMING SOON"
+                puts ''
+            elsif input == 'main menu'
+                start
+            else
+                goodbye
+                exit
+            end
+        end
+    end
+    
     def america_descriptions
         input = nil
         while input != "exit"
             puts "--" * 30
             puts  <<-DOC.gsub /^\s*/, ''
             
-            * Choose an index (1-10)
+            * choose an index (1-10) for more information on a location
             * 'list' for the 10 Most Haunted Places in America
-            * 'main menu'
+            * 'main menu' 
             * 'exit'
             DOC
             input = gets.strip.downcase
@@ -76,6 +107,7 @@ class MostHauntedCli::CLI
     end
     
     def goodbye
+        puts ''
         puts "Scare ya later!"
     end
 end

@@ -26,7 +26,7 @@ class MostHauntedCli::America
   
     def self.create_haunted
         top_ten = MostHauntedCli::Scraper.scrape_america
-        top_ten.each.with_index do |h, i|
+        top_ten.each do |h|
             new = self.new
             new.location = h
             d = h.split(".")[0]
