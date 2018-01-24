@@ -1,11 +1,11 @@
-require './lib/most_haunted_cli/version'
+require './lib/most_haunted/version'
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "most_haunted_cli/version"
+require "most_haunted/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "most_haunted_cli"
+  spec.name          = "most_haunted"
   spec.version       = MostHauntedCli::VERSION
   spec.authors       = ["jamiegiuliano"]
   spec.email         = ["jamiepgiuliano@gmail.com"]
@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
   
   spec.executables   = ["most_haunted_cli"]
-  spec.files         = ["lib/most_haunted_cli", "lib/most_haunted_cli/america.rb", "lib/most_haunted_cli/cli.rb", "lib/most_haunted_cli/scraper.rb", "lib/most_haunted_cli/states.rb", "lib/most_haunted_cli/version.rb", "lib/most_haunted.rb"]
+  spec.files         = ["lib/most_haunted", "lib/most_haunted/america.rb", "lib/most_haunted/cli.rb", "lib/most_haunted/scraper.rb", "lib/most_haunted/states.rb", "lib/most_haunted/version.rb", "lib/environment.rb"]
  
  
   spec.add_development_dependency "bundler", "~> 1.16"

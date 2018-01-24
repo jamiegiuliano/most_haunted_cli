@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/most_haunted'
+require_relative '../lib/environment'
 
 MostHauntedCli::CLI.new.call

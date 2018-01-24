@@ -26,7 +26,7 @@ Or install it yourself as:
 
 Run Gem with command:
 
-    $ most_haunted_cli
+    $ most_haunted
     
 TODO:
     
