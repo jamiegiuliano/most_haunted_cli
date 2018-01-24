@@ -11,7 +11,7 @@ America and Canada. Once a location is selected a description is displayed.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'most_haunted_cli'
+gem 'most_haunted'
 ```
 
 And then execute:
@@ -20,7 +20,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install most_haunted_cli
+    $ gem install most_haunted
 
 ## Usage
 
