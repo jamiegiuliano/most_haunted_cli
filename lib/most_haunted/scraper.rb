@@ -5,25 +5,12 @@ class MostHauntedCli::Scraper
     
     @url = "https://hauntedrooms.com/haunted-places"
     
-    def self.get_page(url)
-        html = open(url)
-        Nokogiri::HTML(html)  
-    end
-    
     def self.america
        @america 
     end
-    
-    def self.states
-       @states 
-    end
-    
-    def self.url
-       @url 
-    end
    
     def self.scrape_america
-        doc = get_page(self.url)
+        doc = Nokogiri::HTML(open(@url))
         new = doc.search("h3.section-title.clearfix span").children
         new.each do |list|
             self.america << list.text
@@ -32,17 +19,17 @@ class MostHauntedCli::Scraper
     end
     
     def self.scrape_america_descriptions
-        doc = get_page(self.url)
+        doc = Nokogiri::HTML(open(@url))
         paragraphs = doc.search("div.entry-content p")
         paragraphs
     end
     
     def self.states
-       doc = get_page(self.url)
+       doc = Nokogiri::HTML(open(@url))
        states = doc.search("tbody li").children
         states.each do |s|
-           self.states << s.text
+           @states << s.text
         end
-        self.states
+        @states
     end
 end

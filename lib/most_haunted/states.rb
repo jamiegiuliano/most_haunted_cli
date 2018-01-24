@@ -9,7 +9,7 @@ class MostHauntedCli::States
         states.each do |s|
            new = self.new
            new.name = s
-           self.haunted << new
+           @haunted << new
         end
         self.haunted
     end
