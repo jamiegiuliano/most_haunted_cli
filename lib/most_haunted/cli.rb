@@ -37,9 +37,13 @@ class MostHauntedCli::CLI
                 puts ""
                 list_states
                 state_options
-            else
+            when "exit"
                 goodbye
                 exit
+            else
+                puts ''
+                puts "** Please enter valid input **"
+                start
             end
         end
     end
@@ -69,7 +73,7 @@ class MostHauntedCli::CLI
             DOC
             input= gets.strip.downcase
             
-            if input.to_i > 0
+            if input.to_i > 0 && input.to_i < 53
                 puts ''
                 puts "MORE HAUNTINGS COMING SOON"
                 puts ''
@@ -77,9 +81,13 @@ class MostHauntedCli::CLI
                 start
             elsif input == 'list'
                 MostHauntedCli::States.state_columns
-            else
+            elsif input == 'exit'
                 goodbye
                 exit
+            else
+                puts ''
+                puts "** Please enter valid input **"
+                state_options
             end
         end
     end
@@ -98,15 +106,19 @@ class MostHauntedCli::CLI
             input = gets.strip.downcase
             descriptions = MostHauntedCli::America
                 
-            if input.to_i > 0 
+            if input.to_i > 0 && input.to_i < 11
                 descriptions.america_descriptions(MostHauntedCli::America.america_indexes[input.to_i-1])
             elsif input == "list"
                 MostHauntedCli::America.list_each
             elsif input == "main menu"
                 start
-            else 
+            elsif input == 'exit' 
                 goodbye
                 exit
+            else
+                puts ''
+                puts "** Please enter valid input **" 
+                america_descriptions
             end
         end
     end
