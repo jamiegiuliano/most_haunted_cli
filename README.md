@@ -1,8 +1,7 @@
 ## License 
 
-Copyright (c) 2018 jamiegiuliano and contributers
-
-MIT License, see [LICENSE](LICENSE.md) for details.
+The gem is available as open source under the terms of the MIT License, 
+see [LICENSE](LICENSE.md) for details.
 
 # MostHauntedCli
 
