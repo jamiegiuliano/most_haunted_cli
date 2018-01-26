@@ -65,7 +65,7 @@ class MostHauntedCli::CLI
         puts "--" * 30
             puts <<-DOC.gsub /^\s*/, ''
             
-            * choose an index (1-52) to discover a state's most haunted location!
+            * choose an index (1-52) to discover the state's most haunted locations!
             * 'list' for a list of states
             * 'main menu'
             * 'exit'
