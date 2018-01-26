@@ -59,6 +59,9 @@ class MostHauntedCli::Scraper
         url = @urls[input.to_i - 1]
             doc = Nokogiri::HTML(open(url)) 
             locations = doc.search("div.entry-content h2").children
+            if locations.empty? == true
+                locations = doc.search("div.entry-content i").children
+            end
             locations.each do |l|
                 list << l.text.gsub("end section_title", " ") unless l.text == "(Stay Here)" || l.text == "(Book Now)" || l.text == "(Book a Room)"
             end
