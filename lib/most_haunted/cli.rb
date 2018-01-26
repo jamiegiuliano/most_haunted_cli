@@ -74,8 +74,11 @@ class MostHauntedCli::CLI
             input= gets.strip.downcase
             
             if input.to_i > 0 && input.to_i < 53
+                puts "--" * 20
+                MostHauntedCli::States.open_state_title(input.to_i)
+                puts "--" * 20
                 puts ''
-                puts "MORE HAUNTINGS COMING SOON"
+                MostHauntedCli::States.open_state_info(input.to_i)
                 puts ''
             elsif input == 'main menu'
                 start
