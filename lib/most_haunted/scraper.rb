@@ -34,6 +34,8 @@ class MostHauntedCli::Scraper
         @states
     end
     
+    # Individual State Information
+    
     def self.scrape_state_url
         doc = Nokogiri::HTML(open(@main_url))
         states = doc.search("tbody li").children
@@ -61,6 +63,9 @@ class MostHauntedCli::Scraper
             locations = doc.search("div.entry-content h2").children
             if locations.empty? == true
                 locations = doc.search("div.entry-content i").children
+                if locations.empty? == true
+                    locations = doc.search("h3.section-title.clearfix.title_center").children
+                end
             end
             locations.each do |l|
                 list << l.text.gsub("end section_title", " ") unless l.text == "(Stay Here)" || l.text == "(Book Now)" || l.text == "(Book a Room)"

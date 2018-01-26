@@ -46,6 +46,8 @@ class MostHauntedCli::States
         end
     end
     
+    # Individual State Information
+    
     def self.open_state_title(input)
        title = MostHauntedCli::Scraper.scrape_state_title(input)
        puts title
