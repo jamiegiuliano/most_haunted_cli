@@ -47,8 +47,8 @@ class MostHauntedCli::Scraper
     
     def self.scrape_state_title(input)
         title = []
-        scrape_state_url
-        url = @urls[input.to_i - 1]
+        u = MostHauntedCli::States.haunted
+        url = u[input - 1].url
         doc = Nokogiri::HTML(open(url)) 
         t = doc.search("h1.entry-title").text
             title << t
@@ -57,8 +57,8 @@ class MostHauntedCli::Scraper
     
     def self.scrape_state_locations(input)
         list = []
-        scrape_state_url
-        url = @urls[input.to_i - 1]
+        u = MostHauntedCli::States.haunted
+        url = u[input.to_i - 1].url
             doc = Nokogiri::HTML(open(url)) 
             locations = doc.search("div.entry-content h2").children
             if locations.empty? == true

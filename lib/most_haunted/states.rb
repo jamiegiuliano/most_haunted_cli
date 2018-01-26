@@ -1,9 +1,8 @@
 class MostHauntedCli::States
-    attr_accessor :name
+    attr_accessor :name, :url
     
     @haunted = []
     @states = []
-    @urls = []
 
     def self.create_state
         states = MostHauntedCli::Scraper.states
@@ -13,6 +12,7 @@ class MostHauntedCli::States
            @haunted << new
         end
         self.haunted
+        add_urls
     end
     
     def self.haunted
@@ -56,5 +56,12 @@ class MostHauntedCli::States
     def self.open_state_info(input)
         info = MostHauntedCli::Scraper.scrape_state_locations(input)
         info.each{|i| puts i.gsub(' –', '.')}
+    end
+    
+    def self.add_urls
+        u = MostHauntedCli::Scraper.scrape_state_url
+        self.haunted.each.with_index do |h, i|
+            h.url = u[i]
+        end
     end
 end
