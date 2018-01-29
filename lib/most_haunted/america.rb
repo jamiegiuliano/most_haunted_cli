@@ -16,6 +16,10 @@ class MostHauntedCli::America
         (13..15).to_a,
         (8..11).to_a,
          ]
+         
+    def self.indexes
+       INDEXES 
+    end
     
     def self.list
        @@list 

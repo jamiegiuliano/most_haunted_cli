@@ -110,7 +110,7 @@ class MostHauntedCli::CLI
             descriptions = MostHauntedCli::America
                 
             if input.to_i > 0 && input.to_i < 11
-                descriptions.america_descriptions(MostHauntedCli::America.america_indexes[input.to_i-1])
+                descriptions.america_descriptions(MostHauntedCli::America.indexes[input.to_i-1])
             elsif input == "list"
                 MostHauntedCli::America.list_each
             elsif input == "main menu"
