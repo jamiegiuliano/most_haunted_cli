@@ -1,26 +1,26 @@
 class MostHauntedCli::States
     attr_accessor :name, :url
     
-    @haunted = []
-    @states = []
+    @@haunted = []
+    @@states = []
 
     def self.create_state
         states = MostHauntedCli::Scraper.states
         states.each do |s|
            new = self.new
            new.name = s
-           @haunted << new
+           @@haunted << new
         end
         self.haunted
         add_urls
     end
     
     def self.haunted
-        @haunted
+        @@haunted
     end
     
     def self.states
-        @states
+        @@states
     end
      
     def self.states_list

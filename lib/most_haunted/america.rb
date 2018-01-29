@@ -1,32 +1,28 @@
 class MostHauntedCli::America
     attr_accessor :location, :description
     
-    @haunted = []
-    @list = []
+    @@haunted = []
+    @@list = []
     
-        @@indexes = [
-           (46..48).to_a,
-           (41..44).to_a,
-           (36..39).to_a,
-           (32..34).to_a,
-           (28..30).to_a,
-           (25..26).to_a,
-           (21..23).to_a,
-           (17..19).to_a,
-           (13..15).to_a,
-           (8..11).to_a,
-            ]
-            
-    def self.america_indexes
-       @@indexes 
-    end
+    INDEXES = [
+        (46..48).to_a,
+        (41..44).to_a,
+        (36..39).to_a,
+        (32..34).to_a,
+        (28..30).to_a,
+        (25..26).to_a,
+        (21..23).to_a,
+        (17..19).to_a,
+        (13..15).to_a,
+        (8..11).to_a,
+         ]
     
     def self.list
-       @list 
+       @@list 
     end
     
     def self.haunted
-       @haunted 
+       @@haunted 
     end
     
     def self.list_each
@@ -40,7 +36,7 @@ class MostHauntedCli::America
             new.location = h
             d = h.split(".")[0]
             n = "#{d}".to_i
-            new.description = @@indexes[n-1]
+            new.description = INDEXES[n-1]
             self.haunted << new
         end
         self.haunted
