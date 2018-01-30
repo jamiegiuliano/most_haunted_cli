@@ -13,6 +13,10 @@ class MostHauntedCli::Scraper
     def self.s
         @@s
     end
+    
+    def self.urls
+       @@urls 
+    end
    
     def self.scrape_america
         doc = Nokogiri::HTML(open(URL))
@@ -44,9 +48,9 @@ class MostHauntedCli::Scraper
         doc = Nokogiri::HTML(open(URL))
         states = doc.search("tbody li").children
         states.each do |t|
-            @@urls << t.attribute("href").value
+            self.urls << t.attribute("href").value
         end
-        @@urls
+        self.urls
     end
     
     def self.scrape_state_title(input)
@@ -56,7 +60,7 @@ class MostHauntedCli::Scraper
         doc = Nokogiri::HTML(open(url)) 
         t = doc.search("h1.entry-title").text
             title << t
-            title
+            puts title
     end
     
     def self.scrape_state_locations(input)

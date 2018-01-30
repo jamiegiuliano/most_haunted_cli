@@ -46,11 +46,6 @@ class MostHauntedCli::States
     
     # Individual State Information
     
-    def self.open_state_title(input)
-       title = MostHauntedCli::Scraper.scrape_state_title(input)
-       puts title
-    end
-    
     def self.open_state_info(input)
         info = MostHauntedCli::Scraper.scrape_state_locations(input)
         info.each{|i| puts i.gsub(' –', '.')}

@@ -78,7 +78,7 @@ class MostHauntedCli::CLI
             
             if input.to_i > 0 && input.to_i < 53
                 puts "--" * 20
-                MostHauntedCli::States.open_state_title(input.to_i)
+                MostHauntedCli::Scraper.scrape_state_title(input.to_i)
                 puts "--" * 20
                 puts ''
                 MostHauntedCli::States.open_state_info(input.to_i)
