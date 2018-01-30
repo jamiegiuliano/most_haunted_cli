@@ -106,14 +106,13 @@ class MostHauntedCli::CLI
             * 'exit'
             DOC
             input = gets.strip.downcase
-            descriptions = MostHauntedCli::America
                 
             if input.to_i > 0 && input.to_i < 11
                 puts ''
-                descriptions.america_descriptions(MostHauntedCli::America.indexes[input.to_i-1])
+                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.indexes[input.to_i-1])
             elsif input == "list"
                 puts ''
-                MostHauntedCli::America.list_each
+                MostHauntedCli::America.list_haunted
             elsif input == "main menu"
                 start
             elsif input == 'exit' 
