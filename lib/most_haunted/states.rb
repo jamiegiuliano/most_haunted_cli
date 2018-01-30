@@ -26,11 +26,7 @@ class MostHauntedCli::States
     end
      
     def self.states_list
-        if self.states.empty? == true
-            self.haunted.collect.with_index(1) do |s, i|
-               self.states << "#{i}. #{s.name}"
-            end
-        end
+        self.haunted.collect.with_index(1){|s, i| "#{i}. #{s.name}"}
     end
     
     def self.create_columns(slice)
@@ -43,7 +39,7 @@ class MostHauntedCli::States
     end
     
     def self.state_columns
-        self.states.each.each_slice(2) do |slice|
+        states_list.each.each_slice(2) do |slice|
             create_columns(slice)
         end
     end

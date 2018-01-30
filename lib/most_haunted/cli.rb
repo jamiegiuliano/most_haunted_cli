@@ -59,7 +59,6 @@ class MostHauntedCli::CLI
     end
     
     def list_states
-        MostHauntedCli::States.states_list 
         MostHauntedCli::States.state_columns
     end
     
