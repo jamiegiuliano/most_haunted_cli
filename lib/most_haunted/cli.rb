@@ -56,7 +56,6 @@ class MostHauntedCli::CLI
     def list_states
         MostHauntedCli::States.states_list 
         MostHauntedCli::States.state_columns
-        puts ''
     end
     
     def state_options
@@ -79,10 +78,10 @@ class MostHauntedCli::CLI
                 puts "--" * 20
                 puts ''
                 MostHauntedCli::States.open_state_info(input.to_i)
-                puts ''
             elsif input == 'main menu'
                 start
             elsif input == 'list'
+                puts ''
                 MostHauntedCli::States.state_columns
             elsif input == 'exit'
                 goodbye
@@ -110,8 +109,10 @@ class MostHauntedCli::CLI
             descriptions = MostHauntedCli::America
                 
             if input.to_i > 0 && input.to_i < 11
+                puts ''
                 descriptions.america_descriptions(MostHauntedCli::America.indexes[input.to_i-1])
             elsif input == "list"
+                puts ''
                 MostHauntedCli::America.list_each
             elsif input == "main menu"
                 start

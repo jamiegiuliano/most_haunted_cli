@@ -38,9 +38,8 @@ class MostHauntedCli::America
         top_ten.each do |h|
             new = self.new
             new.location = h
-            d = h.split(".")[0]
-            n = "#{d}".to_i
-            new.description = INDEXES[n-1]
+            d = h.split(".")[0].to_i
+            new.description = INDEXES[d-1]
             self.haunted << new
         end
         self.haunted
