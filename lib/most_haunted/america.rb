@@ -39,8 +39,8 @@ class MostHauntedCli::America
         end
     end
     
-    def self.list_haunted
-        self.haunted.each{|l| puts l.location}
+    def self.list_locations
+       self.haunted.each{|l| puts l.location}
     end
     
     def self.america_descriptions(input)

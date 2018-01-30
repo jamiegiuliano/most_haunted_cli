@@ -54,7 +54,7 @@ class MostHauntedCli::CLI
     
     def list_america 
         puts ''
-        MostHauntedCli::America.list_haunted
+        MostHauntedCli::America.list_locations
     end
     
     def list_states
@@ -116,8 +116,7 @@ class MostHauntedCli::CLI
                 MostHauntedCli::America.america_descriptions(MostHauntedCli::America.indexes[input.to_i-1])
             elsif input == "list"
                 puts ''
-                binding.pry
-                MostHauntedCli::America.list_haunted
+                MostHauntedCli::America.list_locations
             elsif input == "main menu"
                 start
             elsif input == 'exit' 
