@@ -2,7 +2,6 @@ class MostHauntedCli::America
     attr_accessor :location, :description
     
     @@haunted = []
-    @@list = []
     
     INDEXES = [
         (46..48).to_a,
@@ -21,34 +20,27 @@ class MostHauntedCli::America
        INDEXES 
     end
     
-    def self.list
-       @@list 
-    end
-    
     def self.haunted
        @@haunted 
     end
+    
+    def initialize(location, description)
+        @location = location
+        @description = description
+        @@haunted << self
+    end
   
-    def self.create_haunted
-        top_ten = MostHauntedCli::Scraper.scrape_america
-        top_ten.each do |h|
-            new = self.new
-            new.location = h
+    def self.create(array)
+        array.each do |h|
+            location = h
             d = h.split(".")[0].to_i
-            new.description = INDEXES[d-1]
-            self.haunted << new
+            description = INDEXES[d-1]
+            self.new(location, description)
         end
-        self.haunted
     end
     
     def self.list_haunted
-        if self.list.empty? == true
-            binding.pry
-            create_haunted.collect{|h| self.list << h.location}
-            puts self.list
-        else
-            puts self.list.each{|l| puts l}
-        end
+        self.haunted.each{|l| puts l.location}
     end
     
     def self.america_descriptions(input)

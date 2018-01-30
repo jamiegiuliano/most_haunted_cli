@@ -1,5 +1,9 @@
 class MostHauntedCli::CLI
    
+    def initialize
+        MostHauntedCli::Scraper.scrape_america
+    end
+    
     def call
         puts "--" * 17
         puts "Search for Scary Places Near You!" 
@@ -112,6 +116,7 @@ class MostHauntedCli::CLI
                 MostHauntedCli::America.america_descriptions(MostHauntedCli::America.indexes[input.to_i-1])
             elsif input == "list"
                 puts ''
+                binding.pry
                 MostHauntedCli::America.list_haunted
             elsif input == "main menu"
                 start

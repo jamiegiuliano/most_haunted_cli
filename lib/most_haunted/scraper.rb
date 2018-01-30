@@ -16,7 +16,7 @@ class MostHauntedCli::Scraper
         new.each do |list|
             self.america << list.text
         end
-        self.america
+        MostHauntedCli::America.create(self.america)
     end
     
     def self.scrape_america_descriptions
