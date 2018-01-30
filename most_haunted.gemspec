@@ -1,8 +1,6 @@
-require './lib/most_haunted/version'
-
-lib = File.expand_path("../lib", __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "most_haunted/version"
+#lib = File.expand_path("../lib", __FILE__)
+#$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require_relative './lib/most_haunted/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "most_haunted"
@@ -12,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Most Haunted Places in America"
   spec.description   = "Top 10 Haunted Locations in America and Top Haunted Locations in Every State."
-  spec.homepage      = "https://github.com/jamiegiuliano/most_haunted_cli"
+  spec.homepage      = "https://github.com/jamiegiuliano/most_haunted_cli_gem"
   spec.license       = "MIT"
   
   spec.executables   = ["most_haunted"]
