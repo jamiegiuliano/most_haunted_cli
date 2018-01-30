@@ -1,11 +1,6 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require_relative "../lib/most_haunted/america"
-require_relative "../lib/most_haunted/cli"
-require_relative "../lib/most_haunted/scraper"
-require_relative "../lib/most_haunted/version"
-require_relative "../lib/most_haunted/states"
 require_relative "../lib/environment"
 
 # You can add fixtures and/or initialization code here to make experimenting
