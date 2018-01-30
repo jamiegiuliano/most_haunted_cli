@@ -15,14 +15,14 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/jamiegiuliano/most_haunted_cli"
   spec.license       = "MIT"
   
-  spec.executables   = ["most_haunted_cli"]
+  spec.executables   = ["most_haunted"]
   spec.files         = ["lib/most_haunted", "lib/most_haunted/america.rb", "lib/most_haunted/cli.rb", "lib/most_haunted/scraper.rb", "lib/most_haunted/states.rb", "lib/most_haunted/version.rb", "lib/environment.rb"]
  
  
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", ">= 0"
-  spec.add_development_dependency "pry", ">= 0"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "pry", "~> 0"
   
-  spec.add_dependency "nokogiri", ">= 0"
+  spec.add_dependency "nokogiri", '>= 1.8.1'
 end
