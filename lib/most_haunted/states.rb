@@ -3,15 +3,17 @@ class MostHauntedCli::States
     
     @@haunted = []
     @@states = []
+    
+    def initialize(name)
+       @name = name
+       @@haunted << self
+    end
 
-    def self.create_state
-        states = MostHauntedCli::Scraper.states
-        states.each do |s|
-           new = self.new
-           new.name = s
-           @@haunted << new
+    def self.create_state(array)
+        array.each do |s|
+            name = s
+            self.new(name)
         end
-        self.haunted
         add_urls
     end
     
@@ -25,7 +27,7 @@ class MostHauntedCli::States
      
     def self.states_list
         if self.states.empty? == true
-            create_state.collect.with_index(1) do |s, i|
+            self.haunted.collect.with_index(1) do |s, i|
                self.states << "#{i}. #{s.name}"
             end
         end

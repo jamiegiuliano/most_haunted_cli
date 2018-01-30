@@ -2,6 +2,7 @@ class MostHauntedCli::CLI
    
     def initialize
         MostHauntedCli::Scraper.scrape_america
+        MostHauntedCli::Scraper.states
     end
     
     def call

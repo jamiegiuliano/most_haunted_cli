@@ -15,14 +15,6 @@ class MostHauntedCli::America
         (13..15).to_a,
         (8..11).to_a,
          ]
-         
-    def self.indexes
-       INDEXES 
-    end
-    
-    def self.haunted
-       @@haunted 
-    end
     
     def initialize(location, description)
         @location = location
@@ -39,8 +31,16 @@ class MostHauntedCli::America
         end
     end
     
+    def self.indexes
+       INDEXES 
+    end
+    
+    def self.haunted
+        @@haunted 
+    end
+    
     def self.list_locations
-       self.haunted.each{|l| puts l.location}
+        self.haunted.each{|l| puts l.location}
     end
     
     def self.america_descriptions(input)

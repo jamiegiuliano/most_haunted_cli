@@ -1,13 +1,17 @@
 class MostHauntedCli::Scraper
     
     @@america = []
-    @@states = []
+    @@s = []
     @@urls = []
     
     URL = "https://hauntedrooms.com/haunted-places"
     
     def self.america
-       @@america 
+        @@america 
+    end
+    
+    def self.s
+        @@s
     end
    
     def self.scrape_america
@@ -25,22 +29,22 @@ class MostHauntedCli::Scraper
         paragraphs
     end
     
-    def self.states
-       doc = Nokogiri::HTML(open(URL))
-       states = doc.search("tbody li").children
-        states.each do |s|
-           @@states << s.text
-        end
-        @@states
-    end
+     # Individual State Information
     
-    # Individual State Information
+    def self.states
+        doc = Nokogiri::HTML(open(URL))
+        states = doc.search("tbody li").children
+        states.each do |t|
+           self.s << t.text
+        end
+        MostHauntedCli::States.create_state(self.s)
+    end
     
     def self.scrape_state_url
         doc = Nokogiri::HTML(open(URL))
         states = doc.search("tbody li").children
-        states.each do |s|
-            @@urls << s.attribute("href").value
+        states.each do |t|
+            @@urls << t.attribute("href").value
         end
         @@urls
     end
