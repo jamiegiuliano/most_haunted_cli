@@ -26,7 +26,7 @@ class MostHauntedCli::America
         array.each do |h|
             location = h
             d = h.split(".")[0].to_i
-            description = INDEXES[d-1]
+            description = indexes[d-1]
             self.new(location, description)
         end
     end
@@ -45,6 +45,7 @@ class MostHauntedCli::America
     
     def self.america_descriptions(input)
         input.each do |i|
+            binding.pry
             description = MostHauntedCli::Scraper.scrape_america_descriptions.children[i].text
             puts description.scan(/.{1,73}/).join("\n")
             puts ""
