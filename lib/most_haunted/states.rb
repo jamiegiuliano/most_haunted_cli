@@ -47,8 +47,7 @@ class MostHauntedCli::States
     # Individual State Information
     
     def self.open_state_info(input)
-        info = MostHauntedCli::Scraper.scrape_state_locations(input)
-        info.each{|i| puts i.gsub(' –', '.')}
+        MostHauntedCli::Scraper.scrape_state_locations(input).each{|i| puts i.gsub(' –', '.')}
     end
     
     def self.add_urls

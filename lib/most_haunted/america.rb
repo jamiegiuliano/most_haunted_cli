@@ -4,16 +4,16 @@ class MostHauntedCli::America
     @@haunted = []
     
     INDEXES = [
-        (46..48).to_a,
-        (41..44).to_a,
-        (36..39).to_a,
-        (32..34).to_a,
-        (28..30).to_a,
-        (25..26).to_a,
-        (21..23).to_a,
-        (17..19).to_a,
-        (13..15).to_a,
-        (8..11).to_a,
+        (46..48),
+        (41..44),
+        (36..39),
+        (32..34),
+        (28..30),
+        (25..26),
+        (21..23),
+        (17..19),
+        (13..15),
+        (8..11),
          ]
     
     def initialize(location, description)
@@ -36,7 +36,7 @@ class MostHauntedCli::America
     end
     
     def self.indexes
-        INDEXES
+        INDEXES.each{|range| (range).to_a }
     end
     
     def self.list_locations
