@@ -51,7 +51,7 @@ class MostHauntedCli::States
     end
     
     def self.add_urls
-        u = MostHauntedCli::Scraper.scrape_state_url
+        u = MostHauntedCli::Scraper.urls
         self.haunted.each.with_index do |h, i|
             h.url = u[i]
         end
