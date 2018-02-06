@@ -22,6 +22,7 @@ class MostHauntedCli::Scraper
         doc = Nokogiri::HTML(open(URL))
         list = doc.search("h3.section-title span").children
         list.each do |l|
+ 
             self.america << l.text.strip
         end
         MostHauntedCli::America.create(self.america)

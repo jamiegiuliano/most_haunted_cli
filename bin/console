@@ -3,6 +3,9 @@
 require "bundler/setup"
 require_relative "../config/environment"
 
+def reload!
+   load './lib/most_haunted/america.rb'  
+end
 
 require "irb"
 IRB.start(__FILE__)

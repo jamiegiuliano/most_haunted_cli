@@ -76,7 +76,7 @@ class MostHauntedCli::CLI
             DOC
             input= gets.strip.downcase
             
-            if input.to_i > 0 && input.to_i <= MostHauntedCli::States.haunted.length
+            if input.to_i.between?(1, MostHauntedCli::States.haunted.length)
                 MostHauntedCli::States.open_state_info(input.to_i)
             elsif input == 'main menu'
                 start
@@ -107,7 +107,7 @@ class MostHauntedCli::CLI
             DOC
             input = gets.strip.downcase
                 
-            if input.to_i > 0 && input.to_i <= MostHauntedCli::America.haunted.size
+            if input.to_i.between?(1, MostHauntedCli::America.haunted.size)
                 puts ''
                 MostHauntedCli::America.america_descriptions(MostHauntedCli::America.indexes[input.to_i-1])
             elsif input == "list"
