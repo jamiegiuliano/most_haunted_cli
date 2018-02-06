@@ -20,9 +20,9 @@ class MostHauntedCli::Scraper
    
     def self.scrape_america
         doc = Nokogiri::HTML(open(URL))
-        list = doc.search("h3.section-title.clearfix span").children
+        list = doc.search("h3.section-title span").children
         list.each do |l|
-            self.america << l.text
+            self.america << l.text.strip
         end
         MostHauntedCli::America.create(self.america)
     end
@@ -58,8 +58,8 @@ class MostHauntedCli::Scraper
         title = []
         u = MostHauntedCli::States.haunted
         url = u[input - 1].url
-        doc = Nokogiri::HTML(open(url)) 
-        t = doc.search("h1.entry-title").text
+        doc = Nokogiri::HTML(open("https://hauntedrooms.com"+"#{url}"))
+        t = doc.search("h1.entry-title").text.strip
             title << t
             puts title
     end
@@ -68,7 +68,7 @@ class MostHauntedCli::Scraper
         list = []
         u = MostHauntedCli::States.haunted
         url = u[input.to_i - 1].url
-            doc = Nokogiri::HTML(open(url)) 
+            doc = Nokogiri::HTML(open("https://hauntedrooms.com"+"#{url}")) 
             locations = doc.search("div.entry-content h2").children
             if locations.empty? == true
                 locations = doc.search("div.entry-content i").children

@@ -45,7 +45,6 @@ class MostHauntedCli::America
     
     def self.america_descriptions(input)
         input.each do |i|
-            binding.pry
             description = MostHauntedCli::Scraper.scrape_america_descriptions.children[i].text
             puts description.scan(/.{1,73}/).join("\n")
             puts ""
