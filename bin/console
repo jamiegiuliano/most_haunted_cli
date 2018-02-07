@@ -4,7 +4,7 @@ require "bundler/setup"
 require_relative "../config/environment"
 
 def reload!
-   load './lib/most_haunted/america.rb'  
+   load './lib/most_haunted/scraper.rb'  
 end
 
 require "irb"

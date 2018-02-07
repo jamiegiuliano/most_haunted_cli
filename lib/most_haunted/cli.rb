@@ -55,11 +55,45 @@ class MostHauntedCli::CLI
     
     def list_america 
         puts ''
-        MostHauntedCli::America.list_locations
+        MostHauntedCli::America.list_locations_names
     end
     
     def list_states
         MostHauntedCli::States.state_columns
+    end
+    
+    def america_descriptions
+        input = nil
+        while input != "exit"
+            puts "--" * 30
+            puts  <<-DOC.gsub /^\s*/, ''
+            
+            * choose an index (1-10) for more information on a location
+            * 'list' for the 10 Most Haunted Places in America
+            * 'main menu' 
+            * 'exit'
+            DOC
+            input = gets.strip.downcase
+                
+            if input.to_i.between?(1, MostHauntedCli::America.all.size)
+                puts ''
+                puts "Location: #{MostHauntedCli::America.all[input.to_i].location}"
+                puts ''
+                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.indexes[input.to_i-1])
+            elsif input == "list"
+                puts ''
+                MostHauntedCli::America.list_locations_names
+            elsif input == "main menu"
+                start
+            elsif input == 'exit' 
+                goodbye
+                exit
+            else
+                puts ''
+                puts "** Please enter valid input **" 
+                america_descriptions
+            end
+        end
     end
     
     def state_options
@@ -90,38 +124,6 @@ class MostHauntedCli::CLI
                 puts ''
                 puts "** Please enter valid input **"
                 state_options
-            end
-        end
-    end
-    
-    def america_descriptions
-        input = nil
-        while input != "exit"
-            puts "--" * 30
-            puts  <<-DOC.gsub /^\s*/, ''
-            
-            * choose an index (1-10) for more information on a location
-            * 'list' for the 10 Most Haunted Places in America
-            * 'main menu' 
-            * 'exit'
-            DOC
-            input = gets.strip.downcase
-                
-            if input.to_i.between?(1, MostHauntedCli::America.haunted.size)
-                puts ''
-                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.indexes[input.to_i-1])
-            elsif input == "list"
-                puts ''
-                MostHauntedCli::America.list_locations
-            elsif input == "main menu"
-                start
-            elsif input == 'exit' 
-                goodbye
-                exit
-            else
-                puts ''
-                puts "** Please enter valid input **" 
-                america_descriptions
             end
         end
     end

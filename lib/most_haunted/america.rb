@@ -1,7 +1,7 @@
 class MostHauntedCli::America
-    attr_accessor :location, :description
+    attr_accessor :name, :location, :description
     
-    @@haunted = []
+    @@all = []
     
     INDEXES = [
         (46..48),
@@ -16,31 +16,34 @@ class MostHauntedCli::America
         (8..11),
          ]
     
-    def initialize(location, description)
+    def initialize(name, location, description)
+        @name = name
         @location = location
         @description = description
-        @@haunted << self
+        @@all << self
     end
   
     def self.create(array)
         array.each do |h|
-            location = h
+            array = h.split(",", 2)
+            name = array[0]
+            location = array[1]
             d = h.split(".")[0].to_i
             description = indexes[d-1]
-            self.new(location, description)
+            self.new(name, location, description)
         end
     end
     
-    def self.haunted
-        @@haunted 
+    def self.all
+        @@all 
     end
     
     def self.indexes
         INDEXES.each{|range| (range).to_a }
     end
     
-    def self.list_locations
-        self.haunted.each{|l| puts l.location}
+    def self.list_locations_names
+        self.all.each{|l| puts "#{l.name}"}
     end
     
     def self.america_descriptions(input)
