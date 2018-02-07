@@ -24,12 +24,14 @@ class MostHauntedCli::America
     end
   
     def self.create(array)
-        array.each do |h|
-            array = h.split(",", 2)
-            name = array[0]
-            location = array[1]
-            d = h.split(".")[0].to_i
-            description = indexes[d-1]
+        array.each do |unparsed_info|
+            parsed_info = unparsed_info.split(",", 2)
+            name = parsed_info[0]
+            location = parsed_info[1]
+            
+            id = unparsed_info.split(".")[0].to_i
+            description = indexes[id-1]
+            
             self.new(name, location, description)
         end
     end
@@ -44,6 +46,10 @@ class MostHauntedCli::America
     
     def self.list_locations_names
         self.all.each{|l| puts "#{l.name}"}
+    end
+    
+    def self.find_description_by_input(input)
+       self.all[input.to_i - 1].description
     end
     
     def self.america_descriptions(input)

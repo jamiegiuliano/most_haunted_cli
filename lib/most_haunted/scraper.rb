@@ -9,14 +9,6 @@ class MostHauntedCli::Scraper
     def self.america
         @@america 
     end
-    
-    def self.all_states
-        @@states
-    end
-    
-    def self.urls
-       @@urls 
-    end
    
     def self.scrape_america
         doc = Nokogiri::HTML(open(URL))
@@ -34,6 +26,14 @@ class MostHauntedCli::Scraper
     end
     
      # Individual State Information
+     
+    def self.all_states
+        @@states
+    end
+    
+    def self.urls
+       @@urls 
+    end
     
     def self.states
         doc = Nokogiri::HTML(open(URL))
@@ -72,4 +72,4 @@ class MostHauntedCli::Scraper
         puts ''
         list
     end
-end
+end#

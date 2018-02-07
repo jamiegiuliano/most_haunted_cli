@@ -58,10 +58,6 @@ class MostHauntedCli::CLI
         MostHauntedCli::America.list_locations_names
     end
     
-    def list_states
-        MostHauntedCli::States.state_columns
-    end
-    
     def america_descriptions
         input = nil
         while input != "exit"
@@ -79,7 +75,7 @@ class MostHauntedCli::CLI
                 puts ''
                 puts "Location: #{MostHauntedCli::America.all[input.to_i].location}"
                 puts ''
-                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.indexes[input.to_i-1])
+                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.find_description_by_input(input))
             elsif input == "list"
                 puts ''
                 MostHauntedCli::America.list_locations_names
@@ -94,6 +90,10 @@ class MostHauntedCli::CLI
                 america_descriptions
             end
         end
+    end
+    
+    def list_states
+        MostHauntedCli::States.state_columns
     end
     
     def state_options
