@@ -2,7 +2,6 @@ class MostHauntedCli::CLI
    
     def initialize
         MostHauntedCli::Scraper.scrape_america
-        MostHauntedCli::Scraper.states
     end
     
     def call
@@ -40,8 +39,7 @@ class MostHauntedCli::CLI
                 america_descriptions
             when "2"
                 puts ""
-                list_states
-                state_options
+                puts "COMING SOON!"
             when "exit"
                 goodbye
                 exit
@@ -88,42 +86,6 @@ class MostHauntedCli::CLI
                 puts ''
                 puts "** Please enter valid input **" 
                 america_descriptions
-            end
-        end
-    end
-    
-    def list_states
-        MostHauntedCli::States.state_columns
-    end
-    
-    def state_options
-        input = nil
-        while input != "exit"
-        puts "--" * 30
-            puts <<-DOC.gsub /^\s*/, ''
-            
-            * choose an index (1-52) to discover the state's most haunted locations!
-            * 'list' for a list of states
-            * 'main menu'
-            * 'exit'
-            
-            DOC
-            input= gets.strip.downcase
-            
-            if input.to_i.between?(1, MostHauntedCli::States.haunted.length)
-                MostHauntedCli::States.open_state_info(input.to_i)
-            elsif input == 'main menu'
-                start
-            elsif input == 'list'
-                puts ''
-                MostHauntedCli::States.state_columns
-            elsif input == 'exit'
-                goodbye
-                exit
-            else
-                puts ''
-                puts "** Please enter valid input **"
-                state_options
             end
         end
     end
