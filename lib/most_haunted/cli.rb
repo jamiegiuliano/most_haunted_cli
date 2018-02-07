@@ -73,7 +73,7 @@ class MostHauntedCli::CLI
                 puts ''
                 puts "Location: #{MostHauntedCli::America.find_location(input.to_i)}"
                 puts ''
-                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.find_description_by_input(input))
+                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.find_description_by(input))
             elsif input == "list"
                 puts ''
                 list_america

@@ -52,7 +52,7 @@ class MostHauntedCli::America
        self.all[input.to_i].location 
     end
     
-    def self.find_description_by_input(input)
+    def self.find_description(input)
        self.all[input.to_i - 1].description
     end
     
