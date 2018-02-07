@@ -44,8 +44,12 @@ class MostHauntedCli::America
         INDEXES.each{|range| (range).to_a }
     end
     
-    def self.list_locations_names
+    def self.list_location_names
         self.all.each{|l| puts "#{l.name}"}
+    end
+    
+    def self.find_location(input)
+       self.all[input.to_i].location 
     end
     
     def self.find_description_by_input(input)
