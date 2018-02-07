@@ -1,12 +1,11 @@
 class MostHauntedCli::States
     attr_accessor :name, :url
     
-    @@haunted = []
-    @@states = []
+    @@all = []
     
     def initialize(name)
        @name = name
-       @@haunted << self
+       @@all << self
     end
 
     def self.create_state(array)
@@ -17,16 +16,12 @@ class MostHauntedCli::States
         add_urls
     end
     
-    def self.haunted
-        @@haunted
-    end
-    
-    def self.states
-        @@states
+    def self.all
+        @@all
     end
      
     def self.states_list
-        self.haunted.collect.with_index(1){|s, i| "#{i}. #{s.name}"}
+        self.all.collect.with_index(1){|s, i| "#{i}. #{s.name}"}
     end
     
     def self.create_columns(slice)
@@ -52,7 +47,7 @@ class MostHauntedCli::States
     
     def self.add_urls
         u = MostHauntedCli::Scraper.urls
-        self.haunted.each.with_index do |h, i|
+        self.all.each.with_index do |h, i|
             h.url = u[i]
         end
     end

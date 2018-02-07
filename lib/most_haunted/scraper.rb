@@ -43,13 +43,12 @@ class MostHauntedCli::Scraper
             self.urls << t.attribute("href").value
         end
         MostHauntedCli::States.create_state(self.all_states)
-        self.urls
     end
     
     def self.scrape_state_locations(input)
         list = []
         title = []
-        u = MostHauntedCli::States.haunted
+        u = MostHauntedCli::States.all
         url = u[input.to_i - 1].url
             doc = Nokogiri::HTML(open("https://hauntedrooms.com"+"#{url}")) 
             

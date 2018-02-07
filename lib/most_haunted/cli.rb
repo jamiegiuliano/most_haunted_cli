@@ -110,7 +110,7 @@ class MostHauntedCli::CLI
             DOC
             input= gets.strip.downcase
             
-            if input.to_i.between?(1, MostHauntedCli::States.haunted.length)
+            if input.to_i.between?(1, MostHauntedCli::States.all.length)
                 MostHauntedCli::States.open_state_info(input.to_i)
             elsif input == 'main menu'
                 start
