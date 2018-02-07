@@ -71,9 +71,13 @@ class MostHauntedCli::CLI
                 
             if input.to_i.between?(1, MostHauntedCli::America.all.size)
                 puts ''
-                puts "Location: #{MostHauntedCli::America.find_location(input.to_i)}"
+                puts "--" * 20
+                puts MostHauntedCli::America.found(input).name
+                puts "--" * 20
                 puts ''
-                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.find_description_by(input))
+                puts "Location: #{MostHauntedCli::America.found(input).location}"
+                puts ''
+                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.found(input).description)
             elsif input == "list"
                 puts ''
                 list_america

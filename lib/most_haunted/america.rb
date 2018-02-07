@@ -1,5 +1,5 @@
 class MostHauntedCli::America
-    attr_accessor :name, :location, :description
+    attr_accessor :id, :name, :location, :description
     
     @@all = []
     
@@ -16,7 +16,8 @@ class MostHauntedCli::America
         (8..11),
          ]
     
-    def initialize(name, location, description)
+    def initialize(id, name, location, description)
+        @id = id
         @name = name
         @location = location
         @description = description
@@ -28,11 +29,10 @@ class MostHauntedCli::America
             parsed_info = unparsed_info.split(",", 2)
             name = parsed_info[0]
             location = parsed_info[1]
-            
             id = unparsed_info.split(".")[0].to_i
             description = indexes[id-1]
             
-            self.new(name, location, description)
+            self.new(id, name, location, description)
         end
     end
     
@@ -44,16 +44,12 @@ class MostHauntedCli::America
         INDEXES.each{|range| (range).to_a }
     end
     
+    def self.found(input)
+        self.all.find{|america| america.id == input.to_i}  
+    end
+    
     def self.list_location_names
         self.all.each{|l| puts "#{l.name}"}
-    end
-    
-    def self.find_location(input)
-       self.all[input.to_i].location 
-    end
-    
-    def self.find_description(input)
-       self.all[input.to_i - 1].description
     end
     
     def self.america_descriptions(input)
