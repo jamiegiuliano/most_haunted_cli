@@ -22,9 +22,6 @@ class MostHauntedCli::Scraper
         paragraphs = doc.search("div.entry-content p")
         paragraphs
     end
-<<<<<<< HEAD
-end
-=======
     
      # Individual State Information
      
@@ -72,5 +69,4 @@ end
         puts ''
         list
     end
-end#
->>>>>>> states_feature
+end

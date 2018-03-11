@@ -94,8 +94,6 @@ class MostHauntedCli::CLI
         end
     end
     
-<<<<<<< HEAD
-=======
     def list_states
         MostHauntedCli::States.state_columns
     end
@@ -132,7 +130,6 @@ class MostHauntedCli::CLI
         end
     end
     
->>>>>>> states_feature
     def goodbye
         puts ''
         puts "Scare ya later!"
