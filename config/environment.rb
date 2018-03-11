@@ -1,6 +1,5 @@
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
 
 require_relative "../lib/most_haunted/version"
 require_relative "../lib/most_haunted/cli"
