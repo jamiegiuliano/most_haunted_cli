@@ -94,6 +94,45 @@ class MostHauntedCli::CLI
         end
     end
     
+<<<<<<< HEAD
+=======
+    def list_states
+        MostHauntedCli::States.state_columns
+    end
+    
+    def state_options
+        input = nil
+        while input != "exit"
+        puts "--" * 30
+            puts <<-DOC.gsub /^\s*/, ''
+            
+            * choose an index (1-52) to discover the state's most haunted locations!
+            * 'list' for a list of states
+            * 'main menu'
+            * 'exit'
+            
+            DOC
+            input= gets.strip.downcase
+            
+            if input.to_i.between?(1, MostHauntedCli::States.all.length)
+                MostHauntedCli::States.open_state_info(input.to_i)
+            elsif input == 'main menu'
+                start
+            elsif input == 'list'
+                puts ''
+                MostHauntedCli::States.state_columns
+            elsif input == 'exit'
+                goodbye
+                exit
+            else
+                puts ''
+                puts "** Please enter valid input **"
+                state_options
+            end
+        end
+    end
+    
+>>>>>>> states_feature
     def goodbye
         puts ''
         puts "Scare ya later!"
