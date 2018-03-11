@@ -1,6 +1,8 @@
 class MostHauntedCli::Scraper
 
     @@america = []
+    @@states = []
+    @@urls = []
 
     URL = "https://hauntedrooms.com/haunted-places"
 
@@ -69,4 +71,4 @@ class MostHauntedCli::Scraper
         puts ''
         list
     end
-  end
+end

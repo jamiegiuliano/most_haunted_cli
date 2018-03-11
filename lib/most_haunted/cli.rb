@@ -2,6 +2,7 @@ class MostHauntedCli::CLI
 
     def initialize
         MostHauntedCli::Scraper.scrape_america
+        MostHauntedCli::Scraper.states
     end
 
     def call
@@ -39,7 +40,8 @@ class MostHauntedCli::CLI
                 america_descriptions
             when "2"
                 puts ""
-                puts "COMING SOON!"
+                list_states
+                state_options
             when "exit"
                 goodbye
                 exit
@@ -53,7 +55,7 @@ class MostHauntedCli::CLI
 
     def list_america
         puts ''
-        MostHauntedCli::America.list_location_names
+        MostHauntedCli::America.list_locations_names
     end
 
     def america_descriptions
@@ -71,16 +73,12 @@ class MostHauntedCli::CLI
 
             if input.to_i.between?(1, MostHauntedCli::America.all.size)
                 puts ''
-                puts "--" * 20
-                puts MostHauntedCli::America.found(input).name
-                puts "--" * 20
+                puts "Location: #{MostHauntedCli::America.all[input.to_i].location}"
                 puts ''
-                puts "Location: #{MostHauntedCli::America.found(input).location}"
-                puts ''
-                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.found(input).description)
+                MostHauntedCli::America.america_descriptions(MostHauntedCli::America.find_description_by_input(input))
             elsif input == "list"
                 puts ''
-                list_america
+                MostHauntedCli::America.list_locations_names
             elsif input == "main menu"
                 start
             elsif input == 'exit'
