@@ -131,5 +131,6 @@ class MostHauntedCli::CLI
     def goodbye
         puts ''
         puts "Scare ya later!"
+        system "clear"
     end
 end
