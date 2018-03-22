@@ -1,5 +1,7 @@
 # MostHauntedCliGem
 
+![Alt Text](giphy.gif)
+
 CLI Gem for viewing the most haunted locations in America.This Ruby
 Gem provides a CLI for locating the most haunted locations in America
 as well as in-depth descriptions of each location. This gem allows the user to find these
