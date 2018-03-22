@@ -60,6 +60,9 @@ class MostHauntedCli::Scraper
                 locations = doc.search("div.entry-content i").children
                 if locations.empty? == true
                     locations = doc.search("h3.section-title.clearfix.title_center").children
+                    if locations.empty? == true
+                      locations = doc.search("div.container.section-title-container").children
+                    end
                 end
             end
             locations.each do |l|
