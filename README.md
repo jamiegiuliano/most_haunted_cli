@@ -1,7 +1,7 @@
 # MostHauntedCliGem
 
-CLI Gem for viewing the most haunted locations in America.This Ruby 
-Gem provides a CLI for locating the most haunted locations in America 
+CLI Gem for viewing the most haunted locations in America.This Ruby
+Gem provides a CLI for locating the most haunted locations in America
 as well as in-depth descriptions of each location. This gem allows the user to find these
 locations by their State or from a list of the top 10 Most Haunted Locations in the country. Once a location is selected a description is displayed.
 
@@ -26,11 +26,6 @@ Or install it yourself as:
 Run Gem with command:
 
     $ most_haunted
-    
-TODO:
-    
-* Publish to RubyGems.org
-* Add most haunted locations to each state and their descriptions.
 
 ## Development
 
@@ -43,7 +38,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Bug reports and pull requests are welcome on GitHub at https://github.com/jamiegiuliano/most_haunted_cli_gem.
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
 
-## License 
+## License
 
-The gem is available as open source under the terms of the MIT License, 
+The gem is available as open source under the terms of the MIT License,
 see [LICENSE](LICENSE.md) for details.
